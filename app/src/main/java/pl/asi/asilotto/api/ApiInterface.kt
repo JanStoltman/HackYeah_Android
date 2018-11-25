@@ -22,6 +22,6 @@ interface ApiInterface {
     @GET("/prizes")
     fun getPrize(): Call<List<Prize>>
 
-    @GET("/bet/{lat}/{lng}/{size}/{userId}")
+    @POST("/bet/{lat}/{lng}/{size}/{userId}")
     fun postBet(@Path("lat") lat: Double, @Path("lng") lng: Double, @Path("size") size: Double, @Path("userId") userId: String): Call<Any>
 }

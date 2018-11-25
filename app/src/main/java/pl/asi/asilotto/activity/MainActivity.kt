@@ -74,8 +74,10 @@ class MainActivity : BaseCompatActivity(), OnMapReadyCallback {
             }
 
             override fun onResponse(call: Call<List<Prize>>, response: Response<List<Prize>>) {
-                parseTime(response.body()?.get(0)?.lotteryTime.toString())
-                moneyPool.text = String.format("%.2f zł", response.body()?.get(0)?.prize ?: 0.0)
+                if(response.body()?.size ?: 0 > 0) {
+                    parseTime(response.body()?.get(0)?.lotteryTime.toString())
+                    moneyPool.text = String.format("%.2f zł", response.body()?.get(0)?.prize ?: 0.0)
+                }
             }
 
             private fun parseTime(lotteryTime: String) {
@@ -135,7 +137,9 @@ class MainActivity : BaseCompatActivity(), OnMapReadyCallback {
                     sizesGroup.addView(radio)
                 }
 
-                sizesGroup.check(sizesGroup.getChildAt(0).id)
+                if(sizesGroup.childCount > 0) {
+                    sizesGroup.check(sizesGroup.getChildAt(0).id)
+                }
                 confirmButton.visibility = View.VISIBLE
                 loadProgress.visibility = View.GONE
             }

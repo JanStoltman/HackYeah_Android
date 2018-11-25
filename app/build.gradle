@@ -5,6 +5,16 @@ apply plugin: 'io.fabric'
 apply plugin: 'com.google.gms.google-services'
 android {
     compileSdkVersion 28
+
+    signingConfigs {
+        release {
+            storeFile file("/home/yggdralisk/release.jks")
+            storePassword 'asi_321'
+            keyAlias 'key0'
+            keyPassword 'asi_321'
+        }
+    }
+
     defaultConfig {
         applicationId "pl.asi.asilotto"
         minSdkVersion 24
@@ -17,9 +27,12 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
 }
+
+
 
 repositories {
     mavenCentral()
