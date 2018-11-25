@@ -1,4 +1,22 @@
 <resources>
     <string name="app_name">AsiLotto</string>
     <string name="title_activity_main">Map</string>
+    <string name="bet">Obstaw</string>
+    <string name="login">Login</string>
+    <string name="password">Hasło</string>
+    <string name="log_in">Zaloguj</string>
+    <string name="register">Zarejestruj się</string>
+    <string name="one">1</string>
+    <string name="five">5</string>
+    <string name="ten">10</string>
+    <string name="email">Email</string>
+    <string name="zero_zl">0 zł</string>
+    <string name="zero_hour">00:00</string>
+    <string name="time_to_new_point">Czas do losowania:</string>
+    <string name="prizes_amount">Pula nagród:</string>
+    <string name="please_log_in">Zaloguj się</string>
+    <string name="choose_payment_method">Wybierz metodę płatości</string>
+    <string name="please_register">Zarejestruj się</string>
+    <string name="pay">Zapłać</string>
+    <string name="add_next">Dodaj następny</string>
 </resources>
